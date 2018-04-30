@@ -1,0 +1,36 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+section{
+  width: 100%;
+  margin-left: 5%;
+  margin-top: -22%;
+  border:2px;
+}
+
+pre{
+margin-left: 15%
+}
+
+button{
+  margin-left: 20%;
+  margin-bottom: 20px;
+}
+
+
+#formInscription{
+
+    box-shadow: 2px 2px 5px 5px rgba(244, 234, 234, 0.768);
+    margin-top: 20%;
+   margin-left: 15%;
+}
+
+.divpass{
+    display: flex;
+  }

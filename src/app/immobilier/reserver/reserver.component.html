@@ -1,0 +1,32 @@
+  <section class="row">
+
+ 
+        <div class="card col s5 cat" *ngFor="let bien of Bien">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator image" src="data:image/jpg;base64,{{bien.images[0].image}}">
+                </div>
+
+                <mat-tab-group>
+
+                  <mat-tab label="Détails">
+                     <p class=" activator grey-text text-darken-1">{{bien.localite.localite}}</p>
+                    <pre class="card-title  grey-text text-darken-4">{{bien.prix_location}}</pre>
+                    <pre>{{bien.nom_bien}}</pre>
+                    <p   style="flex-wrap:wrap;">{{bien.description}}</p>
+                  </mat-tab>
+
+                  <mat-tab label="Images"> </mat-tab>
+                </mat-tab-group>
+               
+
+        
+       </div>
+    
+<aside class="col s7">
+    <mat-tab-group>
+        <mat-tab label="Connexion"><app-connexion> </app-connexion></mat-tab>
+        <mat-tab label="Inscription"><app-inscription> </app-inscription></mat-tab>
+      </mat-tab-group>
+</aside>
+
+</section> 

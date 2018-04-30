@@ -1,0 +1,24 @@
+<section>
+
+    <div>
+        <app-nav></app-nav>
+     </div>
+
+     <div>
+            <app-recherche></app-recherche>
+     </div>
+
+
+
+
+    <div>
+            <pre> <h5 style="text-align:center">Biens Disponibles</h5></pre>
+
+        <section  class="row catalogue">
+        <app-catalogue *ngFor="let Biens of Bien  | paginate: { itemsPerPage: 3, currentPage: p}" [bien]= "Biens" class="col s4 row"></app-catalogue>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </section>
+    </div>
+
+
+</section>

@@ -1,0 +1,87 @@
+  <section class="formIns">
+
+<form  method="post" #formInscription="ngForm" (ngSubmit)="onSubmit(formInscription.value)"  id="formInscription" class="row">
+  <pre> <h4> Inscription </h4></pre>
+
+          <div  class="form-group col s8">
+            <input matInput placeholder="Prenom et Nom" #nomcomplet="ngModel" type="text" name="nom_complet" required  class="form-control" ngModel>
+                      
+                  <div *ngIf="nomcomplet.invalid && (nomcomplet.dirty || nomcomplet.touched)" class="alert alert-danger" style="color:  red">
+                        
+                        <div *ngIf="nomcomplet.errors.required">
+                          Nom Complet Obligatoire!
+                        </div>
+                  </div>
+              
+             </div>
+  
+          <div class="col s8">
+              <input matInput type="number" #numpiece="ngModel"  placeholder="Numéro de Piece" name="num_piece"required ngModel maxlength="12" minlength="12">
+                      
+                  <div *ngIf="numpiece.invalid && (numpiece.dirty || numpiece.touched)" class="alert alert-danger" style="color:  red">
+                        
+                        <div *ngIf="numpiece.errors.required">
+                          Numéro de Piece Obligatoire!
+                        </div>
+                  </div>
+          
+          </div>
+
+          <div  class="form-group col s8">
+            <input matInput placeholder="Téléphone" #tel="ngModel" type="number" name="tel"required ngModel>
+                      
+                  <div *ngIf="tel.invalid && (tel.dirty || tel.touched)" class="alert alert-danger" style="color:  red">
+                      
+                      <div *ngIf="tel.errors.required">
+                        Numéro de Piece Obligatoire!
+                      </div>
+                  </div>
+          </div>
+
+          <div class="col s8">
+                <input matInput placeholder="Adresse" type="text" #adresse="ngModel" name="adresse"required ngModel>
+                      
+                  <div *ngIf="adresse.invalid && (adresse.dirty || adresse.touched)" class="alert alert-danger" style="color:  red">
+                  
+                      <div *ngIf="adresse.errors.required">
+                         Adresse Obligatoire!
+                      </div>
+                  </div>
+          </div>
+
+          <div class="col s8">
+              <input matInput placeholder="Entrer votre email" #email="ngModel" name="email" #email="ngModel" class="validate" required
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" ngModel>
+                    
+                      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger" style="color: red;">
+                             <div *ngIf="email.errors.required">
+                               Email Obligatoire!
+                             </div>
+                             
+                          <div *ngIf="email.errors && email.errors.pattern">
+                               Email Non Valide!
+                             </div>
+                       </div>
+          </div>
+
+
+          <div class="col s8">
+           <div class="divpass">
+               <input matInput placeholder="Enter votre mot de passe" [type]="hide ? 'password' : 'text'" name="password" #password="ngModel"  required ngModel>
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                    
+              </div>
+                      
+                  <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger" style="color:  red">
+                      
+                      <div *ngIf="password.errors.required">
+                        Mot de passe Obligatoire!
+                      </div>
+                  </div>
+          </div>
+
+        <button class="btn waves-effect waves-light" type="submit" style="background-color:green; margin-top: 50px; width: 23%" name="action" [disabled]="!formInscription.valid" (click)="reset(formInscription)">Inscription
+            <i class="material-icons right">send</i>
+        </button>
+</form>
+  </section>

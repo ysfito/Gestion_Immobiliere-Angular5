@@ -1,0 +1,37 @@
+<section   class="sectionRecherche">
+
+        
+    <form method="post" #formSearch="ngForm" (ngSubmit)="onSubmit(formSearch.value)"> 
+        <aside>  
+                <mat-form-field>
+                        <mat-select placeholder="Localité" name="localite" ngModel>
+                        <mat-option *ngFor=" let localite of Localite" value="{{ localite.localite}}" >
+                            {{ localite.localite}}
+                        </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+        </aside>   
+  
+        <aside>
+                <mat-form-field>
+                        <mat-select placeholder="Type de Bien" name="TypeBien" ngModel>
+                        <mat-option *ngFor="let type of TypeBien" value="{{ type.typebien }}" >
+                            {{ type.typebien }}
+                        </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+        </aside>
+        
+                    
+        <aside>
+  
+                
+                <input matInput  matTextareaAutosize matAutosizeMinRows="2"
+                        matAutosizeMaxRows="6" placeholder="Prix" name="prix_location" ngModel>
+        </aside>
+                
+        <button class="btn waves-effect waves-light" type="submit" style="background-color:lightgreen; margin-top: 130px; width: 18%" name="submit">Rechercher
+            <i class="material-icons right">send</i>
+        </button>
+     </form> 
+  </section>

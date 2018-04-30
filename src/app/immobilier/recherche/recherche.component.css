@@ -1,0 +1,35 @@
+.icone{
+    margin-left: 95%;
+    background: lightgreen;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+form{
+    display:flex;
+    justify-content: space-around;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sectionRecherche{
+
+     background-image: url('../../../assets/images/téléchargement.jpeg');
+    background-attachment: fixed;
+    background-position-y: 100%;
+    background-position-x: 100%;
+    background-size: cover;
+    height:300px;
+   
+}
+
+aside{
+    margin-top: 130px;
+}

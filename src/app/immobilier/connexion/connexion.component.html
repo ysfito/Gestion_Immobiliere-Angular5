@@ -1,0 +1,53 @@
+<section class="sectionConnexion" >
+
+
+
+        <form method="post" #formConnexion="ngForm" (ngSubmit)="onSubmit(formConnexion.value)" class="row formConnexion">
+
+            <pre><h4 style="width:5%"> Authentification !!!</h4> </pre>
+
+
+
+          <div class="form-group col s8">
+              <input matInput placeholder="Entrer votre email" #email="ngModel" name="email" #email="ngModel" class="validate" required
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" ngModel>
+                    
+                      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger" style="color: red;">
+                             <div *ngIf="email.errors.required">
+                               Email Obligatoire!
+                             </div>
+                             
+                          <div *ngIf="email.errors && email.errors.pattern">
+                               Email Non Valide!
+                          </div>
+                       </div>
+                      
+          </div>
+
+
+
+
+          <div  class="form-group  col s8">
+            <div class="divpass">
+               <input matInput placeholder="Enter votre mot de passe" [type]="hide ? 'password' : 'text'" name="password" #password="ngModel"  required ngModel>
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                    
+              </div>
+             <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger" style="color: red;">
+                             <div *ngIf="password.errors.required">
+                               Mot de Passe Obligatoire!
+                             </div>
+                       </div>
+          </div>
+
+
+
+      <button class="btn waves-effect waves-light" type="submit" style="background-color:green; margin-top: 100px; width: 20%" name="submit" [disabled]="!formConnexion.valid">Connexion
+        <i class="material-icons right">send</i>
+    </button>
+
+  </form>
+
+
+
+</section>

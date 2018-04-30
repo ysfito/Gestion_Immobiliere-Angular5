@@ -1,0 +1,12 @@
+.nav-wrapper{
+    background-color: green;
+}
+
+.link{
+    margin-left:70%;
+}
+
+.linkA{
+    background-color: green;
+    justify-content: space-between;
+}

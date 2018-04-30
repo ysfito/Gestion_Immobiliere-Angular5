@@ -1,0 +1,16 @@
+
+<div class="card col s15 cat">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator image" src="data:image/jpg;base64,{{bien.images[0].image}}">
+    </div>
+    <div class="card-content">
+        <h6 class=" activator grey-text text-darken-1">{{bien.nom_bien}}<i class="material-icons right">more_vert</i></h6>
+        <p class=" activator grey-text text-darken-1">{{bien.localite.localite}}</p>
+        <pre class="card-title  grey-text text-darken-4">{{bien.prix_location}}</pre>
+        <p><a routerLink="/Reserver/{{bien.id}}">Réserver</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">{{bien.localite.localite}}<i class="material-icons right">close</i></span>
+      <p>{{bien.description}}</p>
+    </div>
+  </div>
